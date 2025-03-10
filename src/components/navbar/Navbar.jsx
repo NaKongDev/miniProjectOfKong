@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import Logo from '../../assets/img/logo-black.png'
 import { FaBars } from "react-icons/fa";
+import { Link } from 'react-router-dom';
 
 function Navbar() {
 
@@ -18,8 +19,8 @@ function Navbar() {
                     </a>
                 </div>
                 <ul className={`${!toggle ? 'hidden' : 'flex'} flex flex-col my-5 md:flex md:flex-row`}>
-                    <li className='my-2 md:mx-4'><a href="#">Home</a></li>
-                    <li className='my-2 md:mx-4'><a href="#">Service</a></li>
+                    <li className='my-2 md:mx-4'><Link to="/">Home</Link></li>
+                    <li className='my-2 md:mx-4'><Link to="/About">Service</Link></li>
                     <li className='my-2 md:mx-4'><a href="#">Feature</a></li>
                     <li className='my-2 md:mx-4'><a href="#">Product</a></li>
                     <li className='my-2 md:mx-4'><a href="#">Testimonial</a></li>

@@ -1,36 +1,25 @@
 import { useState } from 'react'
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
 import Navbar from './components/navbar/Navbar'
-import Header from './components/Header/Header'
-import Clients from './components/Clients/Clients'
-import Commumity from './components/Commumity/Commumity'
-import Pixelgrade from './components/Pixelgrade/Pixelgrade'
-import Stats from './components/Stats/Stats'
-import How from './components/How/How'
-import Meet from './components/Meet/Meet'
-import Article from './components/Article/Article'
-import Demo from './components/Demo/Demo'
-import Footer from './components/Footer/Footer'
+import Home from './components/Home/Home'
+import About from './components/About/About'
 
 function App() {
   const [count, setCount] = useState(0)
 
   return (
-    <>
-       <Navbar/>
-       <Header/>
-       <Clients/>
-       <Commumity/>
-       <Pixelgrade/>
-       <Stats/>
-       <How/>
-       <Meet/>
-       <Article/>
-       <Demo/>
-       <Footer/>
-    </>
+    <div>
+      <Router>
+        <Navbar />
+        <Routes>
+          <Route path='/' element={<Home />} />
+          <Route path='/About' element={<About />} />
+        </Routes>
+      </Router>
+    </div>
   )
 }
 
